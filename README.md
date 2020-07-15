@@ -1,4 +1,4 @@
-#How to Train a Deep Neural Network (DNN) Optimally
+# How to Train a Deep Neural Network (DNN) Optimally
 
 The goal of training a Deep Artificial Neural Network or DNN is two-fold:
 
