@@ -3,20 +3,24 @@
 The goal of training a Deep Artificial Neural Network or DNN is two-fold:
 
 - Achieve effectiveness (such that the model generalizes well)
-- Achieve efficiency (converges faster to an optimal solution)
+- Achieve efficiency (converges faster to an effective solution)
 
-We measure the effectiveness by using performance on the test dataset (e.g., test accuracy). The efficiency is measured by the training time. Some techniques enable to converge faster (in fewer epochs), but they require more trining time pr epoch. These are not efficient techniques from the perspective of overall training time. We prefer a technique that achieves higher accuracy in shortest training time.
+We measure the effectiveness by using model's performance on the test dataset (e.g., test accuracy). The efficiency is measured by the training (wall) time. Some techniques enable to converge in fewer epochs, but they require more training time per epoch. For some applications these are not suitable techniques from the perspective of overall training time. 
+
+    We prefer a technique that achieves higher test accuracy using shortest training time.
 
 Two main issues prevent achieving effectiveness and efficiency in training DNNs.
 
 - The vanishing/exploding gradient problem of the Backpropagation algorithm
 - Slow convergenge due to the Stochastic Gradient Descent (SGD) algorithm
 
-The first issue is deadlier than the second one. It can completely stall the training and stop learning. However, even if it is resolved, SGD could converge very slowly.
+The first issue is deadlier than the second one. It can completely stall the training and stop learning. Even if the vanishing/exploding gradient issue is resolved, SGD could make the training painfully slow.
 
-Two notebooks are created to overcome these issues:
+We present several techniques to overcome these issues in the following two notebooks designed for **two DNN architectures**:
 - Notebook 1: feedforward dense DNNs
 - Notebook 2: Convolutional Neural Networks or CNNs
 
-In our investigation of the slow convergence problem of SGD, we compare the 1cycle learning rate schedule with the NAdam optimizer. We used the deafult learning rate for NAdam. However, it is important to determine the optimal learning rate for optimizers like NAdam. We conduct this investigation in another notebook.
+In our investigation of the slow convergence problem of SGD, we use two techniques to determine the optimal learning rate: learning rate schedule (to determine a global constant learning rate) and adaptive learning rate (to determine learning rate per dimension).
+
+More specifically, we compare the **1cycle learning rate schedule** with the **NAdam** adaptive learning rate based optimizer. In notebooks 1 and 2, we used the deafult learning rate for NAdam. However, it is important to determine the optimal learning rate for optimizers like NAdam. We conduct this investigation in the following notebook.
 - Notebook 3: Determine the Optimal Learning Rate for NAdam
