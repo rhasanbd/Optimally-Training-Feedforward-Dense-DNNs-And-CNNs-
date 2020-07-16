@@ -24,3 +24,7 @@ In our investigation of the slow convergence problem of SGD, we use two techniqu
 
 More specifically, we compare the **1cycle learning rate schedule** with the **NAdam** adaptive learning rate based optimizer. In notebooks 1 and 2, we used the deafult learning rate for NAdam. However, it is important to determine the optimal learning rate for optimizers like NAdam. We conduct this investigation in the following notebook.
 - Notebook 3: Determine the Optimal Learning Rate for NAdam
+
+One of the key findings from the experiments done in notebooks 1 and 2 is that the **pretraining** based weight initialization technique significantly reduces the training time and achieves very high test accuracy. To implement the pretraining based initializer we need to determine what fraction of training data and classes should be used for pretraining. Generally it is beneficial to use a small subset of the training data. However, it is not clear whether we should use a small subset of the classes as well. By keeping the pretraining subset data fixed, we could either use a large fraction of the classes each with smaler instances, or a small subset of the classes each with larger number of instances. Which strategy should we use? In the following notebook we propose a strategy.
+
+- Notebook 4: Optimal Strategy for Pretraining based Weight Initialization
