@@ -16,21 +16,7 @@ The first issue is deadlier than the second one. It can completely stall the tra
 
 Two notebooks are created to overcome these issues:
 - Notebook 1: feedforward dense DNNs
-- Notebook 2: Concolutional Neural Networks or CNNs
+- Notebook 2: Convolutional Neural Networks or CNNs
 
-The vanishing/exploding gradient problem of the Backpropagation algorithm is attributed to the weight initialization technique and the activation function. The slow convergence issue of SGD is caused by its learning rate. Thus, we inestigate the role of these three factors in training a DNN optimally:
-
-- Weight Initializer
-- Activation Function
-- Learning Rate Optimizer for SGD
-
-We use the following following variants of the above three factors:
-
-- Initializers: LeCun, Glorot, He and Orthogonal
-- Activation function: Sigmoid, Tanh, ReLU, ELU
-- Learning Rate Optimizer: 1cycle (learning rate schedule) to tune global scalar LR & NAdam (adaptive LR) to tune LRs per dimension.
-
-In addition to this, we experiment with the Batch Normalization (BN) technique that addresses the vanishing/exploding gradient poblem as well as acts as a regularizer.
-
-For a fair comparison with the BN based approach, we add l2 regularizer with other models where we see overfitting happens. The regularization parameter alpha is tuned optimally.
-
+In our investigation of the slow convergence problem of SGD, we compare the 1cycle learning rate schedule with the NAdam optimizer. We used the deafult learning rate for NAdam. However, it is important to determine the optimal learning rate for optimizers like NAdam. We conduct this investigation in another notebook.
+- Notebook 3: Determine the Optimal Learning Rate for NAdam
